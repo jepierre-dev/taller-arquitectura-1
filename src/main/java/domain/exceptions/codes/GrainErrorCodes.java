@@ -4,9 +4,7 @@ import shared.domain.exceptions.ErrorCode;
 
 public enum GrainErrorCodes implements ErrorCode {
 
-    NAME_REQUIRED("GRAIN-001"),
-    INVENTORY_REQUIRED("GRAIN-002"),
-    INVENTORY_NEGATIVE("GRAIN-003");
+    INVENTORY_NEGATIVE("GRAIN-001");
 
     private final String code;
 

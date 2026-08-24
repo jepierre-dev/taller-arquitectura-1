@@ -1,6 +1,7 @@
 package domain.models;
 
 import domain.exceptions.GrainErrors;
+import shared.domain.exceptions.FieldErrors;
 
 public record Grain (
     Long id,
@@ -10,12 +11,8 @@ public record Grain (
   ){
 
     public Grain{
-      if (name == null) {
-        throw GrainErrors.nameRequired();
-      }
-      if (totalOnInventory == null) {
-        throw GrainErrors.inventoryRequired(totalOnInventory);
-      }
+      FieldErrors.requirePresent(name, "name");
+      FieldErrors.requirePresent(totalOnInventory, "totalOnInventory");
       if (totalOnInventory < 0) {
         throw GrainErrors.inventoryNegative(totalOnInventory);
       }

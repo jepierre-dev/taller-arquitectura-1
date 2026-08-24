@@ -1,5 +1,9 @@
 package domain.models;
 
-public class Order {
+public record Order(
+    Long id,
+    Grain grain,
+    PreparationMethod preparationMethod
+) {
   
 }

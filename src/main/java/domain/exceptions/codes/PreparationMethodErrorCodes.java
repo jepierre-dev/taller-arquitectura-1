@@ -2,13 +2,13 @@ package domain.exceptions.codes;
 
 import shared.domain.exceptions.ErrorCode;
 
-public enum OrderErrorCodes implements ErrorCode {
+public enum PreparationMethodErrorCodes implements ErrorCode {
 
-    INVENTORY_NEGATIVE("ORDER-001");
+    TIME_NEGATIVE("PREPARATION-001");
 
     private final String code;
 
-    OrderErrorCodes(String code) {
+    PreparationMethodErrorCodes(String code) {
         this.code = code;
     }
 
