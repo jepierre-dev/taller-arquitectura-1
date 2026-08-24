@@ -28,11 +28,13 @@ public class GrainService implements GrainUseCase {
         if(grainRepositoryPort.existsByNameAndIdNot(name, id)) {
             throw GrainErrors.nameAlreadyExists(name);
         }
+        validateNotNull(grainRepositoryPort.findGrainById(id), id);
         grainRepositoryPort.updateGrain(new Grain(id, name, description, totalOnInventory));
     }
 
     @Override
     public void deleteGrain(Long id) {
+        validateNotNull(grainRepositoryPort.findGrainById(id), id);
         grainRepositoryPort.deleteGrain(id);
     }
 
@@ -52,7 +54,7 @@ public class GrainService implements GrainUseCase {
 
     public void validateNotNull(Grain grain, Long grainId) {
         if(grain == null) {
-            throw new IllegalArgumentException("Grain not found with id: " + grainId);
+            throw GrainErrors.grainNotFound(grainId);
         }
     }
     
