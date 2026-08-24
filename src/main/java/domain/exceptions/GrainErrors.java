@@ -15,4 +15,10 @@ public final class GrainErrors {
         GrainErrorCodes.INVENTORY_NEGATIVE,
         Map.of("totalOnInventory", totalOnInventory));
   }
+
+  public static DomainException nameAlreadyExists(String name) {
+    return new DomainException.Conflict(
+        GrainErrorCodes.NAME_ALREADY_EXISTS,
+        Map.of("name", name));
+  }
 }

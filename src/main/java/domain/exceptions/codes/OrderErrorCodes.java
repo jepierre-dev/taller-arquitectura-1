@@ -4,7 +4,9 @@ import shared.domain.exceptions.ErrorCode;
 
 public enum OrderErrorCodes implements ErrorCode {
 
-    INVENTORY_NEGATIVE("ORDER-001");
+    QUANTITY_NOT_POSITIVE("ORDER-001"),
+    INSUFFICIENT_INVENTORY("ORDER-002"),
+    NOT_PENDING("ORDER-003");
 
     private final String code;
 
