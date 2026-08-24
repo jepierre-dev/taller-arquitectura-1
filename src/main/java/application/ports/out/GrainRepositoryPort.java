@@ -8,6 +8,8 @@ public interface GrainRepositoryPort {
     public void deleteGrain(Long id);
 
     public boolean existsByName(String name);
+    public boolean existsByNameAndIdNot(String name, Long id);
 
     public Grain findGrainById(Long id);
+
 }

@@ -21,4 +21,10 @@ public final class GrainErrors {
         GrainErrorCodes.NAME_ALREADY_EXISTS,
         Map.of("name", name));
   }
+
+  public static DomainException grainNotFound(Long grainId) {
+    return new DomainException.NotFound(
+        GrainErrorCodes.GRAIN_NOT_FOUND,
+        Map.of("grainId", grainId));
+  }
 }
