@@ -15,4 +15,16 @@ public final class PreparationMethodErrors {
         PreparationMethodErrorCodes.TIME_NEGATIVE,
         Map.of("timeInMinutes", timeInMinutes));
   }
+
+  public static DomainException nameAlreadyExists(String name) {
+    return new DomainException.Conflict(
+        PreparationMethodErrorCodes.NAME_ALREADY_EXISTS,
+        Map.of("name", name));
+  }
+
+  public static DomainException preparationMethodNotFound(Long preparationMethodId) {
+    return new DomainException.NotFound(
+        PreparationMethodErrorCodes.PREPARATION_METHOD_NOT_FOUND,
+        Map.of("preparationMethodId", preparationMethodId));
+  }
 }
