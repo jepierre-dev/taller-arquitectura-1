@@ -16,7 +16,7 @@ public class GrainService implements GrainUseCase {
     }
 
     @Override
-    public void createGrain(String name, String description, Long totalOnInventory) {
+    public void createGrain(String name, String description, Integer totalOnInventory) {
         if (grainRepositoryPort.existsByName(name)) {
             throw GrainErrors.nameAlreadyExists(name);
         }
@@ -24,7 +24,7 @@ public class GrainService implements GrainUseCase {
     }
 
     @Override
-    public void updateGrain(Long id, String name, String description, Long totalOnInventory) {
+    public void updateGrain(Long id, String name, String description, Integer totalOnInventory) {
         if(grainRepositoryPort.existsByNameAndIdNot(name, id)) {
             throw GrainErrors.nameAlreadyExists(name);
         }
@@ -39,14 +39,14 @@ public class GrainService implements GrainUseCase {
     }
 
     @Override
-    public void addInventory(Long grainId, Long quantityInGrams) {
+    public void addInventory(Long grainId, Integer quantityInGrams) {
         Grain grain = grainRepositoryPort.findGrainById(grainId);
         validateNotNull(grain, grainId);
         grainRepositoryPort.updateGrain(grain.addInventory(quantityInGrams));
     }
 
     @Override
-    public void removeInventory(Long grainId, Long quantityInGrams) {
+    public void removeInventory(Long grainId, Integer quantityInGrams) {
         Grain grain = grainRepositoryPort.findGrainById(grainId);
         validateNotNull(grain, grainId);
         grainRepositoryPort.updateGrain(grain.removeInventory(quantityInGrams));

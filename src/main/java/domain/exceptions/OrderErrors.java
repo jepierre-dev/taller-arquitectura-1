@@ -18,7 +18,7 @@ public final class OrderErrors {
   }
 
   /** Conflict y no RuleViolation: el mismo pedido seria valido cuando entre stock. */
-  public static DomainException insufficientInventory(Long grainId, Integer requested, Long available) {
+  public static DomainException insufficientInventory(Long grainId, Integer requested, Integer available) {
     return new DomainException.Conflict(
         OrderErrorCodes.INSUFFICIENT_INVENTORY,
         Map.of("grainId", grainId, "requested", requested, "available", available));

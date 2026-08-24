@@ -10,7 +10,7 @@ public final class GrainErrors {
   private GrainErrors() {
   }
 
-  public static DomainException inventoryNegative(Long totalOnInventory) {
+  public static DomainException inventoryNegative(Integer totalOnInventory) {
     return new DomainException.RuleViolation(
         GrainErrorCodes.INVENTORY_NEGATIVE,
         Map.of("totalOnInventory", totalOnInventory));

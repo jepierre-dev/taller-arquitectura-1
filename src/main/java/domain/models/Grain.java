@@ -7,7 +7,7 @@ public record Grain (
     Long id,
     String name,
     String description,
-    Long totalOnInventory
+    Integer totalOnInventory
   ){
 
     public Grain{
@@ -18,16 +18,12 @@ public record Grain (
       }
     }
 
-    public Grain(Long id, String name, String description, Integer totalOnInventory) {
-      this(id, name, description, totalOnInventory != null ? totalOnInventory.longValue() : null);
-    }
-
-    public Grain addInventory(Long quantityInGrams) {
+    public Grain addInventory(Integer quantityInGrams) {
       return new Grain(id, name, description, totalOnInventory + quantityInGrams);
     }
 
     // El constructor rechaza el resultado negativo: no se puede sacar mas stock del que hay.
-    public Grain removeInventory(Long quantityInGrams) {
+    public Grain removeInventory(Integer quantityInGrams) {
       return new Grain(id, name, description, totalOnInventory - quantityInGrams);
     }
 
