@@ -29,7 +29,7 @@ public class ExceptionMappers {
     private static final int UNPROCESSABLE_ENTITY = 422;
     private static final int BAD_REQUEST = Response.Status.BAD_REQUEST.getStatusCode();
 
-    @ServerExceptionMapper
+    @ServerExceptionMapper(DomainException.class)
     public RestResponse<ApiResponse<Void>> domain(DomainException exception, UriInfo uriInfo, HttpHeaders headers) {
         return error(httpStatusOf(exception), exception.errorCode(), exception.details(), uriInfo, headers);
     }
