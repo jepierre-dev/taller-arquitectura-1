@@ -1,5 +1,7 @@
 package application.usecases;
 
+import java.util.List;
+
 import application.ports.in.GrainUseCase;
 import application.ports.out.GrainRepositoryPort;
 import domain.exceptions.GrainErrors;
@@ -36,6 +38,11 @@ public class GrainService implements GrainUseCase {
     public void deleteGrain(Long id) {
         validateNotNull(grainRepositoryPort.findGrainById(id), id);
         grainRepositoryPort.deleteGrain(id);
+    }
+
+    @Override
+    public List<Grain> listGrains() {
+        return grainRepositoryPort.findAllGrains();
     }
 
     @Override

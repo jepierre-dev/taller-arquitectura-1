@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coffee Roasters · Tostado de origen colombiano</title>
+  <meta name="description"
+    content="Tostadores de cafe de origen. Elige tu grano, elige tu metodo y recibe la taza exacta que buscas." />  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9749;</text></svg>" />
+</head>
+
+<body>
+  <a class="skip-link" href="#pedido" data-i18n="skip">Saltar al pedido</a>
+
+  <header class="site-header" id="header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">Coffee<em>Roasters</em></span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <a href="#granos" data-i18n="nav.grains">Granos</a>
+        <a href="#metodos" data-i18n="nav.methods">Métodos</a>
+        <a href="#proceso" data-i18n="nav.process">Proceso</a>
+        <a href="#pedidos" data-i18n="nav.orders">Pedidos</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <button type="button" data-lang="es" class="is-active">ES</button>
+          <button type="button" data-lang="en">EN</button>
+        </div>
+        <a class="btn btn-primary btn-sm" href="#pedido" data-i18n="nav.cta">Pedir ahora</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="shell hero-inner">
+        <div class="hero-copy reveal">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Tostion artesanal · Lotes pequeños</p>
+          <h1 data-i18n-html="hero.title">El grano correcto,<br /><em>tostado a tu método.</em></h1>
+          <p class="lead" data-i18n="hero.lead">
+            Trabajamos microlotes de fincas colombianas y los tostamos según cómo vas a prepararlos.
+            Elige tu origen, elige tu método y nosotros calculamos el perfil exacto.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#pedido" data-i18n="hero.ctaPrimary">Armar mi pedido</a>
+            <a class="btn btn-ghost" href="#granos" data-i18n="hero.ctaSecondary">Ver los orígenes</a>
+          </div>
+          <dl class="stats">
+            <div>
+              <dt data-i18n="stats.grains">Orígenes activos</dt>
+              <dd data-stat="grains">—</dd>
+            </div>
+            <div>
+              <dt data-i18n="stats.methods">Métodos soportados</dt>
+              <dd data-stat="methods">—</dd>
+            </div>
+            <div>
+              <dt data-i18n="stats.stock">Inventario tostado</dt>
+              <dd data-stat="stock">—</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="hero-art reveal" aria-hidden="true">
+          <div class="cup">
+            <span class="steam s1"></span>
+            <span class="steam s2"></span>
+            <span class="steam s3"></span>
+            <div class="cup-body">
+              <div class="cup-liquid"></div>
+            </div>
+            <div class="cup-handle"></div>
+            <div class="cup-plate"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="granos">
+      <div class="shell">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-i18n="grains.eyebrow">Nuestros orígenes</p>
+          <h2 data-i18n="grains.title">Granos disponibles hoy</h2>
+          <p class="section-sub" data-i18n="grains.sub">
+            Inventario en tiempo real. Lo que ves aquí es exactamente lo que hay tostado en bodega.
+          </p>
+        </div>
+        <div class="grid grid-grains" data-grains>
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="metodos">
+      <div class="shell">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-i18n="methods.eyebrow">Cómo lo preparas</p>
+          <h2 data-i18n="methods.title">Métodos de preparación</h2>
+          <p class="section-sub" data-i18n="methods.sub">
+            Cada método extrae algo distinto del mismo grano. El tiempo es una referencia de extracción.
+          </p>
+        </div>
+        <div class="grid grid-methods" data-methods>
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="proceso">
+      <div class="shell">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-i18n="process.eyebrow">Del árbol a la taza</p>
+          <h2 data-i18n="process.title">Cómo trabajamos</h2>
+        </div>
+        <ol class="steps">
+          <li class="reveal">
+            <span class="step-num">01</span>
+            <h3 data-i18n="process.step1.title">Selección de finca</h3>
+            <p data-i18n="process.step1.text">Compramos directo al caficultor y catamos cada lote antes de comprometerlo.</p>
+          </li>
+          <li class="reveal">
+            <span class="step-num">02</span>
+            <h3 data-i18n="process.step2.title">Tostión por perfil</h3>
+            <p data-i18n="process.step2.text">Ajustamos la curva de tostión según el método con el que lo vas a preparar.</p>
+          </li>
+          <li class="reveal">
+            <span class="step-num">03</span>
+            <h3 data-i18n="process.step3.title">Despacho en 24h</h3>
+            <p data-i18n="process.step3.text">Empacamos con válvula desgasificadora el mismo día que sale del tostador.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section-order" id="pedido">
+      <div class="shell order-shell">
+        <div class="order-copy reveal">
+          <p class="eyebrow" data-i18n="order.eyebrow">Tu pedido</p>
+          <h2 data-i18n="order.title">Arma tu taza</h2>
+          <p class="section-sub" data-i18n="order.sub">
+            Descontamos el inventario en el momento en que confirmamos el pedido.
+            Si no hay stock suficiente te lo decimos de una, sin cobrarte.
+          </p>
+          <ul class="order-perks">
+            <li data-i18n="order.perk1">Molienda calibrada al método elegido</li>
+            <li data-i18n="order.perk2">Tostión de máximo 7 días</li>
+            <li data-i18n="order.perk3">Envío gratis desde 500 g</li>
+          </ul>
+        </div>
+
+        <form class="order-card reveal" data-order-form novalidate>
+          <div class="field">
+            <label for="grainId" data-i18n="form.grain">Grano</label>
+            <select id="grainId" name="grainId" required></select>
+          </div>
+
+          <div class="field">
+            <label for="preparationMethodId" data-i18n="form.method">Método de preparación</label>
+            <select id="preparationMethodId" name="preparationMethodId" required></select>
+          </div>
+
+          <div class="field">
+            <label for="quantityInGrams" data-i18n="form.quantity">Cantidad</label>
+            <div class="chips" role="group">
+              <button type="button" data-qty="250">250 g</button>
+              <button type="button" data-qty="500" class="is-active">500 g</button>
+              <button type="button" data-qty="1000">1 kg</button>
+            </div>
+            <div class="input-suffix">
+              <input id="quantityInGrams" name="quantityInGrams" type="number" min="1" step="50" value="500"
+                required />
+              <span data-i18n="form.grams">gramos</span>
+            </div>
+            <p class="field-hint" data-stock-hint></p>
+          </div>
+
+          <button class="btn btn-primary btn-block" type="submit" data-submit>
+            <span data-i18n="form.submit">Confirmar pedido</span>
+          </button>
+
+          <p class="order-note" data-i18n="form.note">
+            Las respuestas del servidor llegan en el idioma que elijas arriba.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="pedidos">
+      <div class="shell">
+        <div class="section-head orders-head reveal">
+          <div>
+            <p class="eyebrow" data-i18n="orders.eyebrow">Trazabilidad</p>
+            <h2 data-i18n="orders.title">Pedidos realizados</h2>
+            <p class="section-sub" data-i18n="orders.sub">
+              Todo lo que ha pasado por el tostador, del más reciente al más antiguo.
+            </p>
+          </div>
+          <button class="btn btn-ghost btn-sm" type="button" data-refresh-orders>
+            <span data-i18n="orders.refresh">Actualizar</span>
+          </button>
+        </div>
+        <div class="orders" data-orders>
+          <div class="skeleton skeleton-row"></div>
+          <div class="skeleton skeleton-row"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div>
+        <span class="brand-text">Coffee<em>Roasters</em></span>
+        <p data-i18n="footer.tagline">Tostadores de origen · Medellín, Colombia</p>
+      </div>
+      <p class="footer-note" data-i18n="footer.note">Proyecto académico · Arquitectura hexagonal sobre Quarkus</p>
+    </div>
+  </footer>
+
+  <div class="toasts" data-toasts aria-live="polite" aria-atomic="false"></div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

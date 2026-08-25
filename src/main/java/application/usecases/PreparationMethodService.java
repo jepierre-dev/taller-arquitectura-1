@@ -1,5 +1,7 @@
 package application.usecases;
 
+import java.util.List;
+
 import application.ports.in.PreparationMethodUseCase;
 import application.ports.out.PreparationMethodRepositoryPort;
 import domain.exceptions.PreparationMethodErrors;
@@ -38,6 +40,11 @@ public class PreparationMethodService implements PreparationMethodUseCase {
     public void deletePreparationMethod(Long id) {
         validateNotNull(preparationMethodRepositoryPort.findPreparationMethodById(id), id);
         preparationMethodRepositoryPort.deletePreparationMethod(id);
+    }
+
+    @Override
+    public List<PreparationMethod> listPreparationMethods() {
+        return preparationMethodRepositoryPort.findAllPreparationMethods();
     }
 
     private void validateNotNull(PreparationMethod preparationMethod, Long preparationMethodId) {

@@ -1,6 +1,7 @@
 package application.usecases;
 
 import java.time.Instant;
+import java.util.List;
 
 import application.ports.in.CoffeeOrderUseCase;
 import application.ports.out.GrainRepositoryPort;
@@ -50,6 +51,11 @@ public class CoffeeOrderService implements CoffeeOrderUseCase {
                 quantityInGrams,
                 Instant.now());
         orderRepositoryPort.saveOrder(order.confirm());
+    }
+
+    @Override
+    public List<Order> listOrders() {
+        return orderRepositoryPort.findAllOrders();
     }
 
     private void validateGrain(Long grainId) {

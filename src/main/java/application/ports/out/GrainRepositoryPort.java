@@ -1,5 +1,7 @@
 package application.ports.out;
 
+import java.util.List;
+
 import domain.models.Grain;
 
 public interface GrainRepositoryPort {
@@ -11,5 +13,6 @@ public interface GrainRepositoryPort {
     public boolean existsByNameAndIdNot(String name, Long id);
 
     public Grain findGrainById(Long id);
+    public List<Grain> findAllGrains();
 
 }
